@@ -45,3 +45,20 @@ services:
       - monitor-net
     labels:
       org.label-schema.group: "monitoring"
+
+  node:
+    container_name: golem_node
+    image: aabrioux/golem-node:latest
+    restart: always
+    networks:
+      - monitor-net
+    links:
+      - "pushgateway:pushgateway"
+    environment:
+      - YAGNA_METRICS_URL=${YAGNA_METRICS_URL}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./data-node/ya-provider/:/root/.local/share/ya-provider/
+      - ./data-node/yagna/:/root/.local/share/yagna/
+    devices:
+      - /dev/kvm:/dev/kvm
