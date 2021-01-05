@@ -42,7 +42,7 @@ golem-logs: 		## Display the container logs
 
 .PHONY: golem-setup
 golem-setup: 		## Setup the node for the first time
-	docker-compose run --rm node golemsp settings set --node-name provider-node-${hostname} --address ${wallet_address} --cpu-per-hour ${cpu_per_hour}
+	docker-compose run --rm node golemsp settings set --node-name provider-node-${hostname} --address ${wallet_address} --cpu-per-hour ${cpu_per_hour} --starting-fee ${cpu_per_hour}
 
 .PHONY: golem-status
 golem-status: 	## Get the running node status

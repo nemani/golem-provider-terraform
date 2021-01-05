@@ -57,7 +57,7 @@ Modify and update `terraform/vars.auto.tfvars` with the desired values
 run `terraform apply`
 
 example ouput:
-    ```
+```
     Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 
     Outputs:
@@ -68,11 +68,14 @@ example ouput:
     prom_ip_address = "95.216.212.*"
 ```
 
+
 you can now ssh into the server using the key you added above
 
 you can run catlog and taillog to see the status of the startup script
 
 you can access prometheus at prom_ip_address:9090
+
+
 
 ## Donation :beer:
 
