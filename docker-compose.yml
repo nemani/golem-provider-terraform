@@ -52,8 +52,6 @@ services:
     restart: always
     networks:
       - monitor-net
-    links:
-      - "pushgateway:pushgateway"
     environment:
       - YAGNA_METRICS_URL=${YAGNA_METRICS_URL}
     volumes:

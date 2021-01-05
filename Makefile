@@ -32,16 +32,16 @@ restart: 	## Restart the node
 shell: 		## Enter the container shell
 	docker-compose exec node bash
 
-.PHONY: golem-logs
-golem-logs: 		## Display the container logs
-	docker-compose logs -t --tail=10 -f node
-
 .PHONY: logs
 logs: 		## Display the container logs
 	docker-compose logs -t --tail=10 -f
 
-.PHONY: setup
-setup: 		## Setup the node for the first time
+.PHONY: golem-logs
+golem-logs: 		## Display the container logs
+	docker-compose logs -t --tail=10 -f node
+
+.PHONY: golem-setup
+golem-setup: 		## Setup the node for the first time
 	docker-compose run --rm node golemsp run
 
 .PHONY: golem-status

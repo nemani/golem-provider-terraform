@@ -20,7 +20,7 @@ Use `make` or `make help` to list the available shortcuts.
 
 ### 1. First Start
 
-Use `make setup` to run the node for the first time.
+Use `make golem-setup` to run the node for the first time.
 
 The CLI will ask you a few questions: refer to the [Provider Node Documentation > Initial Setup](https://handbook.golem.network/provider-tutorials/provider-tutorial#initial-setup) for more details.
 
@@ -28,11 +28,20 @@ The node settings will be kept on your host in a `./data-node` repository.
 
 ### 2. Run the Node
 
-Use `make up` to start the node in a detached mode.
+Use `make up` to start the node and prometheus services in a detached mode.
 
-You can access the logs at any time by running `make logs`.
+You can access the logs for all at any time by running `make logs`.
+
+You can access the logs for golem at any time by running `make golem-logs`.
 
 Use `make golem-status` to get your node address and health.
+
+
+### 3. Running Only Prometheus
+
+Use `make prometheus` to start the prometheus services in a detached mode.
+
+You can access the logs at any time by running `make logs`
 
 ## Donation :beer:
 
