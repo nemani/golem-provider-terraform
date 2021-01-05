@@ -2,6 +2,7 @@
 
 start=$(date +%s)
 
+cd ~
 echo "Running as user" $(whoami)
 
 if ! grep -q 'ssh-add' ~/.bashrc; then
@@ -18,7 +19,7 @@ fi
 sudo apt update && sudo apt -y install make git zip unzip
 
 git clone https://github.com/nemani/golem-provider-terraform
-cd ~/golem-provider-terraform
+cd ./golem-provider-terraform
 
 rm .env
 
@@ -28,6 +29,7 @@ wallet_address=${wallet_address}
 HOSTNAME=${HOSTNAME}
 EOT
 
+make deps
 make golem-setup
 
 if [[ $${PROM_IP} == 'pushgate' ]];
