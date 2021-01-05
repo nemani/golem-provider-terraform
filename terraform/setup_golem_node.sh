@@ -31,13 +31,10 @@ EOT
 
 make deps
 
-if [[ $${PROM_IP} == 'pushgate' ]];
-then
-    docker-compose up -d prometheus pushgateway
-else
-    make golem-setup
-    docker-compose up -d node
-fi
+docker-compose up -d prometheus pushgateway
+
+make golem-setup
+docker-compose up -d node
 
 echo "ALL DONE!"
 end=$(date +%s)
