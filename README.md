@@ -50,7 +50,29 @@ Create API token by signing up and registering on https://console.hetzner.cloud/
 
 Add SSH key to the project with the name "golem-provider-terraform"
 
-Modify and update terraform/vars.auto.tfvars with the desired values
+Modify and update `terraform/vars.auto.tfvars` with the desired values
+
+`cd terraform` 
+
+run `terraform apply`
+
+example ouput:
+    ```
+    Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+    Outputs:
+
+    node_ip_address = [
+    "95.216.189.*",
+    ]
+    prom_ip_address = "95.216.212.*"
+```
+
+you can now ssh into the server using the key you added above
+
+you can run catlog and taillog to see the status of the startup script
+
+you can access prometheus at prom_ip_address:9090
 
 ## Donation :beer:
 

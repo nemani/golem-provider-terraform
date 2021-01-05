@@ -30,12 +30,12 @@ HOSTNAME=${HOSTNAME}
 EOT
 
 make deps
-make golem-setup
 
 if [[ $${PROM_IP} == 'pushgate' ]];
 then
-    docker-compose up -d
+    docker-compose up -d prometheus pushgateway
 else
+    make golem-setup
     docker-compose up -d node
 fi
 
