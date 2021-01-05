@@ -42,8 +42,18 @@ golem-logs: 		## Display the container logs
 
 .PHONY: golem-setup
 golem-setup: 		## Setup the node for the first time
-	docker-compose run --rm node golemsp run
+	docker-compose run --rm node golemsp settings set --node-name provider-node-${hostname} --address ${wallet_address} --cpu-per-hour ${cpu_per_hour}
 
 .PHONY: golem-status
 golem-status: 	## Get the running node status
 	docker-compose exec node golemsp status
+
+docker: 
+	sudo sh ./scripts/get-docker.sh
+	sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-`uname -s`-`uname -m`" -o /usr/local/bin/docker-compose
+	sudo chmod +x /usr/local/bin/docker-compose
+
+ci_deps:
+	sudo apt update
+	sudo apt install -y git curl zip unzip
+	make docker

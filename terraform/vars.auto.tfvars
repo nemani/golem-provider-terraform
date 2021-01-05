@@ -1,0 +1,6 @@
+cpu_per_hour="5"
+golem_nodes_count="2"
+hcloud_token=""
+machine_type="cpx21"
+location="hel1"
+wallet_address="0x78F2F38ba5D9Fe254457C4FF6bDd778B31361c25"
