@@ -50,6 +50,8 @@ Create API token by signing up and registering on https://console.hetzner.cloud/
 
 Add SSH key to the project with the name "golem-provider-terraform"
 
+Modify and update terraform/vars.auto.tfvars with the desired values
+
 ## Donation :beer:
 
 If you find this template useful you may consider the option of offering me a beer through a donation. Support is very appreciated :slightly_smiling_face: 

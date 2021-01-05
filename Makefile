@@ -57,3 +57,4 @@ deps:
 	sudo apt update
 	sudo apt install -y git curl zip unzip
 	make docker
+	sudo sh ./scripts/setup-kvm.sh
