@@ -11,7 +11,7 @@
 
 # In the video
 
-- Link https://youtu.be/sgUNl7mlzFA
+- Link https://youtu.be/7MCnBngeClk
  - Demo of running the node + prom + pushgate from scratch on local machine 
  - Demo of terraform creating the prom + golem nodes 
  - Demo of prom working 
